@@ -41,11 +41,16 @@ export const login = async (req, res) => {
     }
 
     //if user is exist then check the password or compare the password
-    const checkCorrectPassword = bcrypt.compare(req.body.password, user.password);
+    const checkCorrectPassword = await bcrypt.compare(
+        req.body.password, 
+        user.password
+    );
 
     // if password is incorrect
     if(!checkCorrectPassword) {
-        return res.status(401).json({success:false, message:'Incorrect email or password'});
+        return res
+         .status(401)
+         .json({ success:false, message:'Incorrect email or password' });
     }
 
     const {password, role, ...rest} = user._doc
@@ -64,9 +69,9 @@ export const login = async (req, res) => {
     })
     .status(200)
     .json({
-        success: true,
-        message: "successfully login",
+        token,
         data: { ...rest },
+        role,
     });
 
   } catch (err) {
