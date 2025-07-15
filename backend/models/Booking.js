@@ -25,7 +25,7 @@ const bookingSchema = new mongoose.Schema(
       required: true,
     },
     bookAt: {
-      type: date,
+      type: Date,
       required: true,
     },
   },

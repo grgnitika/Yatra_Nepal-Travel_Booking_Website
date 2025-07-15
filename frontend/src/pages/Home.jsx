@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'reactstrap';
 import heroImg from '../assets/images/hero-img01.jpg';
 import heroImg02 from '../assets/images/hero-img02.jpeg';
 import heroVideo from '../assets/images/hero-video.mp4';
-import worldImg from '../assets/images/world.png';
 import experienceImg from '../assets/images/experience.png';
 
 import Subtitle from './../shared/Subtitle';
@@ -26,14 +25,14 @@ const Home = () => {
       <Row>
         <Col lg='6'>
         <div className='hero__content'>
-          <div className='hero__subtitle d-flex align-items-center'>
-            <Subtitle subtitle={"Know Before You Go"} />
+          {/* <div className='hero__subtitle d-flex align-items-center'>
+            <Subtitle subtitle={"Yatra Nepal"} />
             <img src={worldImg} alt='' />
-          </div>
-          <h1>
-            Your Gateway to Exploring Nepal{""}
-            <span className='highlight'> memories</span>
-          </h1>
+          </div> */}
+          <h3>
+            Your Gateway to Exploring{""}
+            <span className='highlight'> Nepal</span>
+          </h3>
           <p>
             Welcome to Yatra Nepal, your trusted travel companion for exploring the diverse 
             landscapes, rich cultures, and hidden gems of Nepal. Whether you're planning a 
@@ -51,7 +50,7 @@ const Home = () => {
         </div>
         </Col>
         <Col lg='2'>
-        <div className='hero__img-box mt-4'>
+        <div className='hero__img-box hero__video-box mt-4'>
           <video src={heroVideo} alt='' controls/>
         </div>
         </Col>
@@ -70,7 +69,7 @@ const Home = () => {
     <Container>
       <Row>
         <Col lg="3">
-          <h5 className='services__subtitle'>What we serve</h5>
+          <h5 className='services__subtitle'>What we serve?</h5><br></br>
           <h2 className='services__title'>We offer our best services</h2>
         </Col>
         <ServiceList />
@@ -83,7 +82,7 @@ const Home = () => {
     <Container>
       <Row>
         <Col lg='12' className="mb-5">
-         <Subtitle subtitle={"Explore"}/>
+         {/* <Subtitle subtitle={"Explore"}/> */}
          <h2 className="featured__tour-title">Our Featured Tours</h2>
         </Col>
         <FeaturedTourList />
@@ -93,7 +92,7 @@ const Home = () => {
   { /*===============Featured tour section end=================*/}
 
   { /*===============Experience section start==================*/}
-  <section>
+  {/* <section>
     <Container>
       <Row>
         <Col lg='6'>
@@ -132,11 +131,11 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
-  </section>
+  </section> */}
   { /*===============Experience section end====================*/}
 
   { /*===============Gallery section start====================*/}
-  <section>
+  {/* <section>
     <Container>
       <Row>
         <Col lg='12'>
@@ -150,7 +149,7 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
-  </section>
+  </section> */}
   { /*=================Gallery section end====================*/}
 
   { /*=================Testimonial section start====================*/}
@@ -158,8 +157,7 @@ const Home = () => {
     <Container>
       <Row>
         <Col lg='12'>
-          <Subtitle subtitle={'Fans Love'} />
-          <h2 className="testimonial__title">What our fans say about us</h2>
+          <h2 className="testimonial__title">What our clients are saying about us?</h2>
         </Col>
         <Col lg="12">
           <Testimonials />

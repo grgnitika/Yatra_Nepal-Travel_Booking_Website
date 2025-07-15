@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import {Container, Row, Button} from 'reactstrap';
-import { NavLink, Link } from 'react-router-dom';
+import React, { useEffect, useRef, useContext } from 'react';
+import { Container, Row, Button } from 'reactstrap';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 import logo from "../../assets/images/logo.png";
 import "./header.css";
+
+import { AuthContext } from './../../context/AuthContext';
 
 const nav__links = [
   {
@@ -19,30 +21,40 @@ const nav__links = [
     display: 'Tours'
   },
   {
-    path: '/contact',   
+    path: '/contact',
     display: 'Contact'
   },
 ];
 
 const Header = () => {
 
-  const headerRef = useRef(null)
+  const headerRef = useRef(null);
+  const menuRef = useRef(null);
+  const navigate = useNavigate();
+  const { user, dispatch } = useContext(AuthContext);
 
-  const stickyHeaderFunc = ()=> {
-    window.addEventListener('scroll', ()=> {
-      if(document.body.scrollTop >80 || document.documentElement.scrollTop >80){
+  const logout = () => {
+    dispatch({ type: 'LOGOUT' })
+    navigate('/');
+  }
+
+  const stickyHeaderFunc = () => {
+    window.addEventListener('scroll', () => {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         headerRef.current.classList.add('sticky__header')
       } else {
         headerRef.current.classList.remove('sticky__header')
       }
-    })
-  }
+    });
+  };
 
-  useEffect(() =>{
-    stickyHeaderFunc()
+  useEffect(() => {
+    stickyHeaderFunc();
 
-    return window.removeEventListener('scroll', stickyHeaderFunc)
-  })
+    return () => window.removeEventListener('scroll', stickyHeaderFunc);
+  });
+
+  const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
 
   return (
     <header className='header' ref={headerRef}>
@@ -51,48 +63,52 @@ const Header = () => {
           <div className='nav__wrapper d-flex aligh-items-center
           justify-content-between'>
 
-            { /*===============Logo=================*/}
+            {/*===============Logo=================*/}
             <div className='logo'>
               <img src={logo} alt='' />
             </div>
-            { /*============Logo end================*/}
+            {/*============Logo end================*/}
 
-            { /*============Menu start==============*/}
-            <div className='naviagtion'>
+            {/*============Menu start==============*/}
+            <div className='naviagtion' ref={menuRef} onClick={toggleMenu}>
               <ul className='menu d-flex align-items-center gap-5'>
                 {nav__links.map((item, index) => (
                   <li className='nav__item' key={index}>
-                    <NavLink 
+                    <NavLink
                       to={item.path}
-                      className={navClass => 
+                      className={navClass =>
                         navClass.isActive ? "active__link" : ""
                       }
-                      >{item.display}
+                    >{item.display}
                     </NavLink>
                   </li>
                 ))}
               </ul>
             </div>
-            { /*=============Menu end===============*/}
+            {/*=============Menu end===============*/}
 
             <div className='nav__right d-flex align-items-center gap-4'>
-              <ul className='menu d-flex align-items-center gap-4'>
-                <li className='nav__item nav__btn-item'>
-                  <NavLink
-                    to='/login'
-                    className={({ isActive }) => isActive ? "active__link" : ""}
-                  >
-                    Login
-                  </NavLink>
-                </li>
-                <li>
-                  <Button className='btn primary__btn'>
-                    <Link to='/register'>Register</Link>
-                  </Button>
-                </li>
-              </ul>
+              <div className='nav__btns d-flex align-items-center gap-4'>
 
-              <span className='mobile__menu'>
+                {user ? (
+                  <>
+                    <h5 className="mb-0">{user.username}</h5>
+                    <Button className="btn btn-dark" onClick={logout}>Logout</Button>
+                  </>
+                ) : (
+                  <>
+                    <Button className="btn secondary__btn">
+                      <Link to="/login">Login</Link>
+                    </Button>
+                    <Button className="btn primary__btn">
+                      <Link to="/register">Register</Link>
+                    </Button>
+                  </>
+                )}
+
+              </div>
+
+              <span className='mobile__menu' onClick={toggleMenu}>
                 <i className="ri-menu-line"></i>
               </span>
             </div>
@@ -104,4 +120,3 @@ const Header = () => {
 };
 
 export default Header;
-

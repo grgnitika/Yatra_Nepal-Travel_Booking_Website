@@ -1,16 +1,27 @@
+.tour__img {
+    position: relative;
+    width: 100%;
+    height: 160px;      /* ✅ This fixes the parent box height */
+    overflow: hidden;   /* ✅ Hides overflow if image is larger */
+}
+
 .tour__img img {
     width: 100%;
-    border-radius: 5px 5px 0 0;
+    height: 100%;       /* ✅ Fills parent box height */
+    object-fit: cover;  /* ✅ Crops nicely to box */
+    border-radius: 5px 5px 0 0; /* ✅ Keep your original corners */
 }
+
 
 .card {
     border: none !important;
     box-shadow: rgba(0, 0, 0.2) 0px 18px 50px -10px;
 }
 
-.tour__img {
-    position: relative;
+.tour__card {
+  margin-bottom: 2rem; /* ✅ Adds space after each card block */
 }
+
 
 .tour__img span {
     position: absolute;
@@ -87,4 +98,33 @@
 
 .booking__btn a:hover {
     color: #fff;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tour__title {
+  min-height: 43px;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .tour__title {
+        font-size: 1rem;
+    }
+
+    .booking__btn a {
+        font-size: 0.8rem;
+    }
+
+    .booking__btn {
+        padding: 0.2rem 0.5rem !important;
+    }
+
+    .tour__location,
+    .tour__rating {
+        font-size: 0.8rem;
+    }
 }

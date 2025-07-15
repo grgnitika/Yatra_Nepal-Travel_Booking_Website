@@ -1,11 +1,11 @@
 import express from 'express';
-import { createTour, getAllTour, getFeaturedTour, getSingleTour, getTourBySearch, getTourCount } from './../controllers/tourController.js';
+import { createTour, updateTour, deleteTour, getAllTour, getFeaturedTour, getSingleTour, getTourBySearch, getTourCount } from './../controllers/tourController.js';
 import { verifyAdmin } from '../utils/verifyToken.js';
 
 const router = express.Router();
 
 // create new tour
-router.post('/', verifyAdmin, createTour);
+router.post('/', verifyAdmin, createTour); 
 
 // update tour
 router.put('/:id', verifyAdmin, updateTour);

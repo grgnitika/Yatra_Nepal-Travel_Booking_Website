@@ -1,6 +1,7 @@
 .footer {
     padding-top: 70px;
     padding-bottom: 30px;
+    background-color: #CEE7E6;
 }
 
 .footer .logo img {
@@ -21,6 +22,7 @@
 .footer__link-title {
     color: var(--heading-color);
     margin-bottom: 1rem;
+    background-color: #CEE7E6;;
 }
 
 .footer__quick-links li a {
@@ -37,4 +39,8 @@
 .copyright {
     color: var(--text-color);
     font-size: 1rem;
+}
+
+.footer__quick-links .list-group-item {
+  background-color: #CEE7E6 !important;
 }

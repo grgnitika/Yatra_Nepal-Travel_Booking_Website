@@ -11,12 +11,12 @@ const tourSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    address: {
-      type: String,
+    date: {
+      type: Date,
       required: true,
     },
-    distance: {
-      type: Number,
+    address: {
+      type: String,
       required: true,
     },
     photo: {

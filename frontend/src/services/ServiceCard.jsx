@@ -1,5 +1,6 @@
 import React from 'react'
 import "./service-card.css";
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ item }) => {
   const { imgUrl, title, desc } = item; 
@@ -11,6 +12,7 @@ const ServiceCard = ({ item }) => {
         </div>
         <h5>{title}</h5>
         <p>{desc}</p>
+        <Link to="/about" className="learn__more-btn">Learn More</Link>
     </div>
   );
 };

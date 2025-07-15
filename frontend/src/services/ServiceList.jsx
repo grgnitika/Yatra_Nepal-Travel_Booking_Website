@@ -9,18 +9,18 @@ import customizationImg from '../assets/images/customization.png'
 const serviceData =[
     {
         imgUrl: weatherImg,
-        title: "Calculate Weather",
-        desc: "Lorem ipsum dolor sit ajhkjdholajhdjb.",
+        title: "Tour Packages",
+        desc: "We offer curated travel packages across Nepal’s most stunning destinations..",
       },
       {
         imgUrl: guideImg,
-        title: "Best Tour Guide",
-        desc: "Lorem ipsum dolor sit ajhkjdholajhdjb.",    
+        title: "Transportation Services",
+        desc: "We provide safe and comfortable travel options to your selected locations.",    
       },
       {
         imgUrl: customizationImg,
-        title: "Customization",
-        desc: "Lorem ipsum dolor sit ajhkjdholajhdjb.",
+        title: "Travel Assistance",
+        desc: "Enjoy end-to-end travel support, from itinerary planning to local guidance..",
       },
 ]
 
@@ -28,7 +28,7 @@ const ServiceList = () => {
   return (
     <>
     {serviceData.map((item, index) => (
-        <Col lg="3" key={index}>
+        <Col lg="3" md="6" sm ="12" className="mb-4" key={index}>
             <ServiceCard item={item} />
         </Col>
      ))}

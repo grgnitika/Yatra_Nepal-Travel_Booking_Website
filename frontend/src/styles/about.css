@@ -1,0 +1,131 @@
+/* === About Section === */
+.about__section {
+  padding: 3rem 0;
+}
+
+.about__section h2 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.about__section p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 2rem;
+  margin-right: 2rem;
+}
+
+.about__section h6 {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  margin-right: 0rem;
+}
+
+.about__img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 0rem;
+  margin-bottom: 7rem;
+}
+
+.about__section h6 {
+  white-space: nowrap;
+}
+
+
+/* === Why Travel With Us Section === */
+.why__section {
+  padding: 4rem 0;
+  background: #CEE7E6;;
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.why__card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 3rem 2rem;
+  min-height: 250px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.why__card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.why__card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.why__card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.why__card p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.why__card {
+  background-color: #fff; /* base background, optional */
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.why__card:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.why__card:hover i {
+  color: #fff;
+}
+
+.why__card:hover i,
+.why__card:hover h5,
+.why__card:hover p {
+  color: #fff;  /* Make icon, heading, and paragraph white */
+}
+
+/* === Gallery Section === */
+.gallery__section {
+  padding: 4rem 0;
+}
+
+.gallery__img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+
+@media (max-width: 768px) {
+  .about__section h2 {
+    font-size: 2rem;
+  }
+
+  .section__title {
+    font-size: 1.75rem;
+  }
+
+  .why__card {
+    padding: 1.5rem 1rem;
+  }
+}

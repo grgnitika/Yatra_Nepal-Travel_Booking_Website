@@ -1,0 +1,33 @@
+.contact__banner {
+  background: url('../assets/images/tour.jpg') center/cover no-repeat;
+  padding: 110px 0;
+  color: #fff;
+}
+
+.contact__form {
+  background: #CEE7E6;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.send__btn {
+  background: #FFA500;
+  border: none;
+  color: #fff;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact__details {
+  padding: 80px;
+}

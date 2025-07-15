@@ -1,7 +1,8 @@
 .service__item {
-    padding: 1rem;
+    padding: 0rem;
     border-bottom: 1px solid #faa83586;
     border-right: 1px solid #faa83586;
+
     border-radius: 0.5rem;
 } 
 
@@ -31,3 +32,16 @@
     font-size: 0.9rem;
     color: var(--text-color);
 }
+
+.learn__more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: gainsboro;
+  color: gray;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+

@@ -16,3 +16,23 @@
     background: var(--secondary-color);
     color: #fff !important;
 }
+
+.tours__hero {
+  position: relative;
+}
+
+.tours__search-bar {
+  position: absolute;
+  bottom: -95px; 
+  left: 57%;
+  transform: translateX(-50%);
+  width: 80%;
+  border-radius: 10px;
+  padding: 0.03rem;
+  z-index: 10;
+}
+
+.tours__list-section {
+  padding-top: 150px;  
+}
+
