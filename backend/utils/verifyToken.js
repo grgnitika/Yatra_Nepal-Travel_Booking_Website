@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-// ✅ Accept a callback as the 4th argument
+
 export const verifyToken = (req, res, next, callback) => {
   const token = req.cookies.accessToken;
 
@@ -14,11 +14,10 @@ export const verifyToken = (req, res, next, callback) => {
     }
 
     req.user = user;
-    callback(); // ✅ Now this runs the next check
+    callback(); 
   });
 };
 
-// ✅ FIX: Don’t check params.id since your POST has no :id
 export const verifyUser = (req, res, next) => {
   verifyToken(req, res, next, () => {
     // Accept any logged-in user

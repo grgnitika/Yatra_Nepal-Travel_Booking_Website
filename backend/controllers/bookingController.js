@@ -73,3 +73,15 @@ export const getAllBooking = async (req, res) => {
         res.status(500).json({ success: true, message: "internal server error" });
     }
 };
+
+// Delete booking
+export const deleteBooking = async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    await Booking.findByIdAndDelete(id);
+    res.status(200).json({ success: true, message: "Booking cancelled." });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Cancellation failed." });
+  }
+};

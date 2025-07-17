@@ -62,26 +62,6 @@ export const deleteTour = async (req, res) => {
   }
 };
 
-// ✅ Get single tour
-// export const getSingleTour = async (req, res) => {
-//   const id = req.params.id;
-
-//   try {
-//     const tour = await Tour.findById(id).populate('reviews');
-
-//     res.status(200).json({
-//       success: true,
-//       message: 'Successful',
-//       data: tour,
-//     });
-//   } catch (err) {
-//     res.status(404).json({
-//       success: false,
-//       message: 'Not found',
-//     });
-//   }
-// };
-
 export const getSingleTour = async (req, res) => {
   const id = req.params.id;
 
