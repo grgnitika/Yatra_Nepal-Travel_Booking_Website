@@ -21,7 +21,6 @@ const Header = () => {
   const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
 
-  // profile modal state
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [profile, setProfile] = useState({
     name: user?.username || '',
@@ -29,27 +28,22 @@ const Header = () => {
     mobile: ''
   });
 
-  // toggle profile overlay
   const toggleProfileModal = () => setShowProfileModal(!showProfileModal);
 
-  // handle individual field updates
   const handleChange = (field, value) => {
     setProfile(prev => ({ ...prev, [field]: value }));
   };
 
-  // "Save Change" click
   const handleSave = () => {
     console.log("Profile saved:", profile);
     toggleProfileModal();
   };
 
-  // log out
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
     navigate('/');
   };
 
-  // sticky header
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 80) {
@@ -62,7 +56,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // mobile menu toggle
   const toggleMenu = () => menuRef.current.classList.toggle('show__menu');
   const handleMyBookings = () => navigate('/my-bookings');
 
@@ -99,37 +92,36 @@ const Header = () => {
                 {user ? (
                   <>
                     {/* User dropdown */}
-<div
-  className="dropdown-container"
-  onMouseEnter={() => document.getElementById("user-dropdown").style.display = "block"}
-  onMouseLeave={() => document.getElementById("user-dropdown").style.display = "none"}
->
-  <span className="user-text" onClick={toggleProfileModal}>
-    Hello {user.username}
-  </span>
-  <span className="dropdown-icon">
-    {/* 10×6 chevron pointing down */}
-    <svg
-      width="10"
-      height="6"
-      viewBox="0 0 10 6"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1 1L5 5L9 1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </span>
+                    <div
+                      className="dropdown-container"
+                      onMouseEnter={() => document.getElementById("user-dropdown").style.display = "block"}
+                      onMouseLeave={() => document.getElementById("user-dropdown").style.display = "none"}
+                    >
+                      <span className="user-text" onClick={toggleProfileModal}>
+                        Hello {user.username}
+                      </span>
+                      <span className="dropdown-icon">
+                        <svg
+                          width="10"
+                          height="6"
+                          viewBox="0 0 10 6"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1L5 5L9 1"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
 
-  <div id="user-dropdown" className="dropdown-menu">
-    <p onClick={handleMyBookings}>My Bookings</p>
-  </div>
-</div>
+                      <div id="user-dropdown" className="dropdown-menu">
+                        <p onClick={handleMyBookings}>My Bookings</p>
+                      </div>
+                    </div>
 
                     <Button className="btn btn-dark" onClick={logout}>Logout</Button>
                   </>
@@ -144,6 +136,7 @@ const Header = () => {
                   </>
                 )}
               </div>
+
               <span className='mobile__menu' onClick={toggleMenu}>
                 <i className="ri-menu-line"></i>
               </span>
@@ -222,7 +215,6 @@ const Header = () => {
           </div>
         </div>
       )}
-
     </header>
   );
 };

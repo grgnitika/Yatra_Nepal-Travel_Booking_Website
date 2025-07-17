@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Newsletter from "../shared/Newsletter";
-import "../styles/contact.css"; // Keep your CSS
+import "../styles/contact.css"; 
 
 const Contact = () => {
   const [form, setForm] = useState({

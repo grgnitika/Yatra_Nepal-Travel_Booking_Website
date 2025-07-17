@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import MasonryImagesGallery from "../components/Image-gallery/MasonryImagesGallery";
 import "../styles/about.css";
+import Newsletter from "../shared/Newsletter";
 
 import aboutImg from "../assets/images/about.jpg";
 
@@ -85,6 +86,7 @@ const About = () => {
           </Row>
         </Container>
       </section>
+      <Newsletter />
     </>
   );
 };

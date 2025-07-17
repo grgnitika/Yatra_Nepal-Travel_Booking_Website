@@ -39,9 +39,8 @@ const Testimonials = () => {
     <Slider {...settings}>
       <div className="testimonial py-4 px-3">
         <p>
-          Hello my name is nitika gurung. snssmms smsm
-          sjjjsd kdkkd kekekn idjdnd ddd jdndnd ddd
-          hhdhdbbddbbdbdb?
+          "Booked my Pokhara trip through Yatra Nepal and had a great experience. The site was simple to use, and I got instant confirmation. Their support team was quick to respond when 
+          I needed to change my plan. Everything was well-managed. Highly recommend for travel within Nepal!"
         </p>
 
         <div className="d-flex align-items-center gap-4 mt-3">
@@ -55,9 +54,8 @@ const Testimonials = () => {
 
       <div className="testimonial py-4 px-3">
         <p>
-          Hello my name is nitika gurung. snssmms smsm
-          sjjjsd kdkkd kekekn idjdnd ddd jdndnd ddd
-          hhdhdbbddbbdbdb?
+          "Booked my Pokhara trip through Yatra Nepal and had a great experience. The site was simple to use, and I got instant confirmation. Their support team was quick to respond when 
+          I needed to change my plan. Everything was well-managed. Highly recommend for travel within Nepal!"
         </p>
 
         <div className="d-flex align-items-center gap-4 mt-3">
@@ -71,9 +69,8 @@ const Testimonials = () => {
 
       <div className="testimonial py-4 px-3">
         <p>
-          Hello my name is nitika gurung. snssmms smsm
-          sjjjsd kdkkd kekekn idjdnd ddd jdndnd ddd
-          hhdhdbbddbbdbdb?
+          "Booked my Pokhara trip through Yatra Nepal and had a great experience. The site was simple to use, and I got instant confirmation. Their support team was quick to respond when 
+          I needed to change my plan. Everything was well-managed. Highly recommend for travel within Nepal!"
         </p>
 
         <div className="d-flex align-items-center gap-4 mt-3">
@@ -87,9 +84,8 @@ const Testimonials = () => {
 
       <div className="testimonial py-4 px-3">
         <p>
-          Hello my name is nitika gurung. snssmms smsm
-          sjjjsd kdkkd kekekn idjdnd ddd jdndnd ddd
-          hhdhdbbddbbdbdb?
+          "Booked my Pokhara trip through Yatra Nepal and had a great experience. The site was simple to use, and I got instant confirmation. Their support team was quick to respond when 
+          I needed to change my plan. Everything was well-managed. Highly recommend for travel within Nepal!"
         </p>
 
         <div className="d-flex align-items-center gap-4 mt-3">
@@ -103,9 +99,8 @@ const Testimonials = () => {
 
       <div className="testimonial py-4 px-3">
         <p>
-          Hello my name is nitika gurung. snssmms smsm
-          sjjjsd kdkkd kekekn idjdnd ddd jdndnd ddd
-          hhdhdbbddbbdbdb?
+          "Booked my Pokhara trip through Yatra Nepal and had a great experience. The site was simple to use, and I got instant confirmation. Their support team was quick to respond when 
+          I needed to change my plan. Everything was well-managed. Highly recommend for travel within Nepal!"
         </p>
 
         <div className="d-flex align-items-center gap-4 mt-3">
@@ -119,9 +114,8 @@ const Testimonials = () => {
 
       <div className="testimonial py-4 px-3">
         <p>
-          Hello my name is nitika gurung. snssmms smsm
-          sjjjsd kdkkd kekekn idjdnd ddd jdndnd ddd
-          hhdhdbbddbbdbdb?
+          "Booked my Pokhara trip through Yatra Nepal and had a great experience. The site was simple to use, and I got instant confirmation. Their support team was quick to respond when 
+          I needed to change my plan. Everything was well-managed. Highly recommend for travel within Nepal!"
         </p>
 
         <div className="d-flex align-items-center gap-4 mt-3">

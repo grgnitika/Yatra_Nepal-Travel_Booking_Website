@@ -1,5 +1,3 @@
-
-
 import galleryImg01 from '../../assets/images/gallery-01.jpg';
 import galleryImg02 from '../../assets/images/gallery-02.jpg';
 import galleryImg03 from '../../assets/images/gallery-03.jpeg';
@@ -9,9 +7,6 @@ import galleryImg06 from '../../assets/images/gallery-06.jpeg';
 import galleryImg07 from '../../assets/images/gallery-07.jpg';
 import galleryImg08 from '../../assets/images/gallery-08.jpeg';
 import galleryImg09 from '../../assets/images/gallery-03.jpeg';
-
-
-
 
 const galleryImages = [
     galleryImg01,

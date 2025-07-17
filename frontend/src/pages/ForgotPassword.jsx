@@ -90,7 +90,7 @@ const ForgotPassword = () => {
           </Col>
         </Row>
       </Container>
-      <ToastContainer position="top-center" />
+      <ToastContainer position="top-right" />
     </section>
   );
 };

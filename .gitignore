@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+.cache/
+dist/
+build/
+*.log
+.env
+
+# Frontend tools
+frontend/node_modules/
+frontend/.cache/
+frontend/dist/
+frontend/.vite/
+frontend/.next/
+frontend/build/
+
+# IDE
+.vscode/
