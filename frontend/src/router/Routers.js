@@ -12,6 +12,7 @@ import Register from './../pages/Register';
 import ThankYou from '../pages/ThankYou';
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
+import MyBookings from '../pages/MyBookings';
 
 
 const Routers = () => {
@@ -29,6 +30,7 @@ const Routers = () => {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path='/thank-you' element={<ThankYou />} />
       <Route path='/tours/search' element={<SearchResultList />} />
+      <Route path="/my-bookings" element={<MyBookings />} />
     </Routes>
   );
 };

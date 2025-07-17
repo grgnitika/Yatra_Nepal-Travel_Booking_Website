@@ -1,24 +1,45 @@
+// src/pages/ForgotPassword.jsx
 import React, { useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import "../styles/login.css"; // Reuse same styling
 import { toast, ToastContainer } from "react-toastify";
+import { BASE_URL } from "../utils/config"; // make sure this is e.g. "http://localhost:4000/api/v1"
+
+import "react-toastify/dist/ReactToastify.css";
+import "../styles/login.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleReset = (e) => {
+  const handleReset = async (e) => {
     e.preventDefault();
-
-    // TODO: Replace with real API call
     if (!email) {
-      toast.error("Please enter your email.");
-      return;
+      return toast.error("Please enter your email.");
     }
 
-    // Simulate sending email
-    toast.success("Reset instructions sent to your email!");
-    setEmail("");
+    setLoading(true);
+    try {
+      const res = await fetch(`${BASE_URL}/auth/forgot-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+        credentials: "include",      // if your server uses cookies
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        toast.success(data.message);
+      } else {
+        toast.error(data.message || "Failed to send reset link.");
+      }
+    } catch (err) {
+      console.error("ForgotPassword error:", err);
+      toast.error("Network error, please try again.");
+    } finally {
+      setLoading(false);
+      setEmail("");
+    }
   };
 
   return (
@@ -42,7 +63,7 @@ const ForgotPassword = () => {
               </div>
               <h2>Forgot Password</h2>
               <p style={{ textAlign: "center" }}>
-                No worries, we'll send you reset instructions.
+                No worries, we’ll send you reset instructions.
               </p>
               <Form onSubmit={handleReset}>
                 <FormGroup>
@@ -54,8 +75,12 @@ const ForgotPassword = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </FormGroup>
-                <Button className="btn auth__btn" type="submit">
-                  Reset Password
+                <Button
+                  className="btn auth__btn"
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Reset Password"}
                 </Button>
               </Form>
               <p>
@@ -65,7 +90,7 @@ const ForgotPassword = () => {
           </Col>
         </Row>
       </Container>
-      <ToastContainer />
+      <ToastContainer position="top-center" />
     </section>
   );
 };
